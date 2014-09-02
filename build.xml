@@ -1,0 +1,66 @@
+<project name="AutomacaoNfeEntrada" basedir="." default="build">
+
+	<!-- Arquivo com as propriedades usadas no build -->
+	<property file="build.properties" />
+	
+	<target name="build" description="Inicia a execução do build da aplicação">
+		<antcall target="init" />
+		<antcall target="compile" />
+		<antcall target="pack" />
+		<!-- 
+		<antcall target="warp" />
+		<antcall target="warp-app-details" />
+		<antcall target="deploy-palmos" />
+		<antcall target="deploy-wince" />
+		 -->
+		<antcall target="deploy" />
+		<antcall target="clean" />
+	</target>
+	
+	<target name="init" description="Prepara a estrutura de diretórios para a execução do build">
+		<!-- Diretório temporário dos arquivos compilados -->
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+
+		<!-- Diretório da distribuição -->
+		<delete dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="compile" description="Compila os códigos do sistema para iniciar a criação dos binários de distribuição">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpath="${classpath}" debug="true" failonerror="true" target="1.1" source="1.2">
+			<include name="**/*.java" />
+		</javac>
+	</target>
+	
+	<target name="pack" description="Empacota as classes compiladas">
+		<jar jarfile="${dist.dir}${file.separator}${ant.project.name}.jar">
+			<fileset dir="${build.dir}">
+				<!-- Classes do sistema -->
+				<include name="**/*.class" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="br.com.mdias.automacaonfeentrada.LeituraEmail"/>
+				<attribute name="Class-Path" value="${classpath.manifest}"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="deploy" description="Copia os arquivos necessários para a pasta build">
+		<copy todir="${dist.dir}">
+			<fileset dir="${libs.dir}" />
+			<fileset dir="${src.dir}">
+				<include name="LeituraEmail.bat" />
+				<include name="leituraemail.properties" />
+				<include name="log4j.properties" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean" description="Organiza a pasta de distribuição e limpa tudo que é desnecessário">
+		<!-- Diretório temporário dos arquivos compilados -->
+		<delete dir="${build.dir}" />
+	</target>
+	
+</project>

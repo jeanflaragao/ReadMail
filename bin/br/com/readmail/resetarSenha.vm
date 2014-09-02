@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="Luciana Mara">
+	<META NAME="CREATED" CONTENT="20111209;17510000">
+	<META NAME="CHANGEDBY" CONTENT="Luciana Mara">
+	<META NAME="CHANGED" CONTENT="20111216;19120000">
+	<META NAME="AppVersion" CONTENT="14.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 3cm; margin-top: 2.5cm; margin-bottom: 2.5cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" TEXT="#000000" DIR="LTR">
+<P STYLE="margin-bottom: 0cm"> <IMG SRC="$logo" NAME="Imagem 1" ALIGN=BOTTOM WIDTH=110 HEIGHT=58 BORDER=0>			</P>
+
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3>Prezado(a) $cliente,</FONT></P>
+<BR>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3>Conforme solicitado seguem seus dados para acessar o $sistema.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3>Cliente: $cliente</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3>Mail: $mail</FONT></P>
+</BODY>
+</HTML>
